@@ -9,7 +9,7 @@ app.use(function (req, res, next) {
     next()
   });
 
-app.get("/home", (req,res) => {
+app.get("/", (req,res) => {
     return res.send("Hello World!");
 });
 

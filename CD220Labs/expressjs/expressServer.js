@@ -20,6 +20,16 @@ app.get("/:name",(req,res)=>{
     res.send("Hello "+req.params.name)
 })
 
+const months = ["January", "February", "March"];
+app.get("/fetch/:num",(req,res)=>{
+    mon= parseInt(req.params.num);
+    if(mon < 1 || mon > 3) {
+        res.send("Error: Enter value between 1 and 3")
+    } else {
+        res.send(months[mon-1])
+    }
+})
+
 app.listen(3333, () => {
     console.log(`Listening at http://localhost:3333`)
 })
